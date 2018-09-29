@@ -81,8 +81,9 @@ img {width: 100%; height:auto; padding:2px;}
 #drawer-handle:hover{cursor:context-menu}
 .d-text {
   padding: 10px;
-  margin-right:40px; padding-left:70px; margin-top:10px;
-  height:100%;
+  margin-right:40px; padding-left:70px; 
+  margin-top: 0px;
+  height: calc(100% - 10px);
   /* font-size: 20px; */
   font-family: 'Arimo', sans-serif;
   font-size: 17px;
@@ -106,8 +107,8 @@ img {width: 100%; height:auto; padding:2px;}
   transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
 }
 #drawer-content {
-    width:         595px;
-    margin-right: -600px; /* -width */
+    /*width:         595px;
+    margin-right: -600px;*/ /* -width */
     background-color: white;
 }
 #drawer-content > p {
@@ -132,7 +133,7 @@ img {width: 100%; height:auto; padding:2px;}
 .header{text-transform: uppercase;}
 .header-d{
   font-size:18px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   text-transform: uppercase;
   top: 50%;
@@ -221,6 +222,7 @@ img {width: 100%; height:auto; padding:2px;}
   margin:5px;
   /* flex: 1; */
 }
+
 div.project-grid-item,
 div.medium-grid-item,
 div.year-grid-item:hover{cursor: pointer}
@@ -269,6 +271,8 @@ div.year-grid-item:hover{
   margin: 5px;
 }
 .medium-grid-item {
+  display: flex;
+  align-items: center;
   border: 1px solid black;
   /* width: auto; */
   height: 40px;
@@ -277,7 +281,7 @@ div.year-grid-item:hover{
   font-family: 'Arimo', sans-serif;
   text-transform: lowercase;
   background-color: white;
-  margin:2px;
+  margin:4px 2px 4px 0px;
   /* flex: 1; */
   text-align: center;
 }

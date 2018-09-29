@@ -268,13 +268,35 @@
   </script>
 
   <script>
+
+function setwidth(){
+  $("#drawer-content").width("calc(" + $("#container").width() + "px - 20px)");
+  $("#drawer-content").css("margin-right",$("#drawer-content").width() * -1 );
+}
+function noscroll(){
+  $(".d-text").mouseover(function(){
+    $(this).css("overflow","scroll");
+    $("#image-container").css("overflow","hidden");
+  });
+  $("#image-container").mouseover(function(){
+    $(this).css("overflow","scroll");
+    $(".d-text").css("overflow","hidden");
+  });
+  
+}
+
     $(document).ready(function(){
+        setwidth();
+        noscroll();
         $(".project-grid-item").click(function(){
         var expanded = false;
+        
             if (expanded = !expanded) {
                 $("#drawer-content").animate({ "margin-right":    0 },  "slow");
+                // $(".header-d").css("position","fixed");
             } else {
-                $("#drawer-content").animate({ "margin-right": -600 }, "slow");
+                var w = $("#drawer-content").width();
+                $("#drawer-content").animate({ "margin-right": w * -1 }, "slow");
             }
                   $(".hello").fadeOut(500);
         });
@@ -297,10 +319,7 @@
   <script>
   $(document).ready(function () {
     $("#undes").click(function () {
-      setTimeout(function(){
-        $("#text-1").css("display", "block");
-      }, 800);
-
+            $("#text-1").css("display", "block");
             $("#image-container-1").fadeIn("slow");
       });
                         $(".image-undes").click(function () {
@@ -352,7 +371,8 @@
                       $(document).ready(function () {
                           var expanded = false;
                           $("#drawer-handle").click(function () {
-                              $("#drawer-content").animate({ "margin-right": -600 }, "slow");
+                              var w = $("#drawer-content").width(); 
+                              $("#drawer-content").animate({ "margin-right": w * -1 }, "slow");
                               $(".image-container").fadeOut("slow");
                               $(".d-text").fadeOut("slow");
                               $(".hello").fadeIn("slow");
